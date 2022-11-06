@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @font-face {
+        font-family: 'ArcadeClassic';
+        src: url('ARCADECLASSIC.TTF');
+    }
+    body{
+        background-color: rgb(37, 101, 153);
+        margin: 0;
+        pad: 0;
+        overflow-x: hidden;
+    }
+    button{
+        height: 50px;
+        width: 50px;
+        background-color: rgb(142, 142, 143); 
+    }
+    #resultado{
+        position: relative;
+        left: 40%;
+        top: 14px;
+        
+    }
+    #res{
+        background-color: rgb(234, 250, 7);
+    }
+    #c{
+        background-color: brown;
+    }
+    #resultado{
+        width: 264px;
+        height: 17px;
+        background-color: white;
+        border-radius: 8px;
+    }
+    h1{
+        font-family: 'ArcadeClassic';
+        color: rgb(34, 177, 77);
+        font-weight: normal;
+        position: relative;
+        left: 40%;
+        top: 31px;
+    }
+    #b:hover{
+        transform: scale(1.1);
+    }
+    #b{
+        position: relative;
+        left: 40%;
+    }
+    #c{
+        position: relative;
+        left: 40%;
+    }
+    #res{
+        position: relative;
+        left: 40%;
+    }
+    
+        
+       
+       
+
+</style>
+<body>
+    <h1>calculadora</h1>
+    <div id="resultado"></div> 
+<tr><br>
+    <button id="b" onclick="insert('1')">1</button>
+    <button id="b" onclick="insert('2')">2</button>
+    <button id="b" onclick="insert('3')">3</button>
+    <button id="b" onclick="insert('4')">4</button>
+    <button id="b" onclick="insert('5')">5</button>
+</tr><br>
+<tr>
+    <button id="b" onclick="insert('6')">6</button>
+    <button id="b" onclick="insert('7')">7</button>
+    <button id="b" onclick="insert('8')">8</button>
+    <button id="b" onclick="insert('9')">9</button>
+    <button id="b" onclick="insert('0')">0</button>
+    
+</tr>
+<tr><br>
+    
+    <button id="b" onclick="insert('%')">%</button>
+    <button id="b" onclick="insert('+')">+</button>
+    <button id="b" onclick="insert('-')">-</button>
+    <button id="b" onclick="insert('/')">/</button>
+    <button id="b" onclick="insert('*')">x</button>
+    
+
+</tr>
+<tr><br>
+
+    <button id="c" style="width: 104px;" onclick="clean()">c</button>
+    <button id="b" onclick="insert('.')">.</button>
+    <button id="res" style="width: 104px;" onclick="resultado('=')">=</button>
+</tr>
+
+    
+    
+    
+</body>
+<script>
+    function insert(num){
+        var numero = document.getElementById('resultado').innerHTML;
+        document.getElementById('resultado').innerHTML = numero + num
+    }
+
+    function clean(){
+        var resultado = document.getElementById('resultado').innerHTML = ''
+    }
+
+    function resultado(){
+        var resultado = document.getElementById('resultado').innerHTML
+        if(resultado){
+            document.getElementById('resultado').innerHTML = eval(resultado)
+
+        }
+    }
+   
+  
+   
+
+    
+
+</script>
+</html>
